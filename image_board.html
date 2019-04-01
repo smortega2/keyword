@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>keyword</title>  
+
+  <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+
+  <style type="text/css">    
+  body
+  {
+    background-color:#000;
+    font-family: 'Actor';
+    font-size:22px;
+  }
+  h1
+  {
+    font-size:15px;
+    margin-top:0;
+    font-family:Arial, sans-serif;
+    text-shadow:2px 0 15px #292929;
+    letter-spacing:4px;
+    text-decoration:none;
+    color:#DDD;
+  }
+  #banner
+  {
+    width:500px;
+    height:200px;
+    text-align:center;
+    background-image:url(http://i.imgur.com/MQHYB.jpg);
+    background-repeat:no-repeat;
+    border-radius:5px;
+    margin:90px auto auto;
+    padding:80px 0;
+  }
+  .lead
+  {
+    background-color:rgba(255,255,255,0.6);
+    border-radius:3px;
+    box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+    font-family:Sintony, sans-serif;
+  }
+  .div_wrapper
+  {
+    width:100%;
+    text-align: center;
+  }
+
+  .ol_wrap
+  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ol {
+    background: #6b4a82;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top:10px;
+  }
+
+  ol li {
+    padding: 5px;
+    margin-left: 35px;
+  }
+
+  #timer
+  {
+    font-family: 'Actor', monospace;
+    margin-top:-30px;
+    font-size:50px;
+  }
+
+  .row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img{
+    width:130px;
+    height:130px;
+/*    opacity: 0.3;
+*/
+  }
+  .img_wrapper { 
+    width: 130px;
+    height: 130px;
+    display: inline-block;
+    background: red;
+    /*background-color: red; 
+    display: inline-block;*/
+/*    visibility: hidden; 
+*/  }
+
+
+
+  .hoverable_img:hover {
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  </style>
+</head>  
+ <body onload="displayBoard()"> 
+  <div class="container-fluid p-0" align="center">
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+      <div class="my-auto">
+        <h1 class="mb-0">keyword</h1>
+      </div>
+    </section>
+  </div>
+  <div class="row"> 
+    <div class="column">
+      <div class="img_wrapper">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im0" onclick="updateImageColor(this.id)">
+      </div>
+      <img class="hoverable_img" src="imgs/im1.jpg" id="im1" onclick="updateImageColor(this.id)">
+      <img class="hoverable_img" src="imgs/im2.jpg" id="im2" onclick="updateImageColor(this.id)">
+      <img class="hoverable_img" src="imgs/im3.jpg" id="im3" onclick="updateImageColor(this.id)">
+      <img class="hoverable_img" src="imgs/im4.jpg" id="im4" onclick="updateImageColor(this.id)">
+    </div>
+  </div>
+  <div class="row"> 
+    <div class="column">
+      <img src="imgs/im5.jpg" id="im5">
+      <img src="imgs/im6.jpg" id="im6">
+      <img src="imgs/im7.jpg" id="im7">
+      <img src="imgs/im8.jpg" id="im8">
+      <img src="imgs/im9.jpg" id="im9">
+    </div>
+  </div>
+  <div class="row"> 
+    <div class="column">
+      <img src="imgs/im10.jpg" id="im10">
+      <img src="imgs/im11.jpg" id="im11">
+      <img src="imgs/im12.jpg" id="im12">
+      <img src="imgs/im13.jpg" id="im13">
+      <img src="imgs/im14.jpg" id="im14">
+    </div>
+  </div>
+  <div class="row"> 
+    <div class="column">
+      <img src="imgs/im15.jpg" id="im15">
+      <img src="imgs/im16.jpg" id="im16">
+      <img src="imgs/im17.jpg" id="im17">
+      <img src="imgs/im18.jpg" id="im18">
+      <img src="imgs/im19.jpg" id="im19">
+    </div>
+  </div>
+  <div class="row"> 
+    <div class="column">
+      <img src="imgs/im20.jpg" id="im20">
+      <img src="imgs/im21.jpg" id="im21">
+      <img src="imgs/im22.jpg" id="im22">
+      <img src="imgs/im23.jpg" id="im23">
+      <img src="imgs/im24.jpg" id="im24">
+    </div>
+  </div>
+  <script src="chance.js"></script>
+  <script src="gameplay_logic.js"></script>
+  <script src="jquery-3.3.1.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
