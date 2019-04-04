@@ -1,0 +1,156 @@
+body
+  {
+    background-color:#000;
+    font-family: 'Actor';
+    font-size:22px;
+  }
+  h1
+  {
+    font-size:15px;
+    margin-top:0;
+    font-family:Arial, sans-serif;
+    text-shadow:2px 0 15px #292929;
+    letter-spacing:4px;
+    text-decoration:none;
+    color:#DDD;
+  }
+  #banner
+  {
+    width:500px;
+    height:200px;
+    text-align:center;
+    background-image:url(http://i.imgur.com/MQHYB.jpg);
+    background-repeat:no-repeat;
+    border-radius:5px;
+    margin:90px auto auto;
+    padding:80px 0;
+  }
+  .lead
+  {
+    background-color:rgba(255,255,255,0.6);
+    border-radius:3px;
+    box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+    font-family:Sintony, sans-serif;
+  }
+  .div_wrapper
+  {
+    width:100%;
+    text-align: center;
+  }
+
+  .ol_wrap
+  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ol {
+    background: #6b4a82;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top:10px;
+  }
+
+  ol li {
+    padding: 5px;
+    margin-left: 35px;
+  }
+
+  #timer
+  {
+    font-family: 'Actor', monospace;
+    margin-top:-30px;
+    font-size:50px;
+  }
+
+  .row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img{
+    width:130px;
+    height:130px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    /*position: relative;
+    z-index: 0;*/
+/*    opacity: 0.3;
+*/
+  }
+  .img_wrapper { 
+    width: 130px;
+    height: 130px;
+    display: inline-block;
+    background: #c6b52d;
+    border-radius: 4px;
+  }
+
+  .vert_text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color:white;
+
+    position: absolute;
+    top: 160px;
+    left: 220px;
+  }
+
+
+  .hoverable_img:hover {
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #737777;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 6px;
+  height:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0ccad1;
+}
+
+.modal_title {
+  font-size: 39px;
+}
+
+.centered{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+

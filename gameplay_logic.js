@@ -1,5 +1,7 @@
 var num_imgs = 31;
 var turn = 0;
+var num_red_selected = 0;
+var num_blue_selected = 0;
 function setupGame(){
 	//  game set to inprogress in db 
 	// 	image grid is generated
@@ -66,7 +68,7 @@ function generatePartitionGrid(){
 	inds = spliceIndsArray(b_inds,inds);
 	
 	game_board = grid;
-	// console.log(grid);
+	console.log(grid);
 	return 0;
 }
 
@@ -92,6 +94,35 @@ function spliceIndsArray(t_inds,inds){
 function updateImageColor(id){
 	document.getElementById(id).style.opacity = "0.3";
 	$("#" + id).removeClass('hoverable_img');
+
+	wrap_id = id.slice(0, 2) + "_w" + id.slice(2);
+	var color = document.getElementById(wrap_id).style.background;
+
+	// for(var i=0; i < 5; i++){
+	// 	for(var j=0; j < 5; j++){
+	// 		console.log("id: " + i + j);
+	// 		console.log(document.getElementById(id).style.zIndex);
+	// 	}
+	// }
+	if(color == "red"){
+		num_red_selected++;
+	}if(color == "blue"){
+		num_blue_selected++;
+	}
+
+	gameOverCheck();
+}
+
+function gameOverCheck(){
+	if(turn == 2 && num_blue_selected == 9){
+		openModal("Blue Wins!", "blue");
+	} else if(turn == 1 && num_blue_selected == 8){
+		openModal("Blue Wins!", "blue");
+	} else if(turn == 1 && num_red_selected == 9){
+		openModal("Red Wins!", "red");
+	} else if(turn == 2 && num_red_selected == 8){
+		openModal("Red Wins!", "red");
+	}
 }
 
 function getTurn(){
@@ -102,8 +133,20 @@ function getGameBoard(){
 	return 0;
 }
 
-function displayBoard(){
+function displayTurn(){
+	if(turn == 1){
+		document.getElementById("team").innerHTML = "Red";
+		document.getElementById("team").style.color = "red";
+	} else if(turn == 2){
+		document.getElementById("team").innerHTML = "Blue";
+		document.getElementById("team").style.color = "blue";
+	}
+	
+}
+
+function displayImageBoard(){
 	setTurn(); //getTurn();
+	displayTurn();
 	generateImageGrid(); // getGameBoard();
 	generatePartitionGrid();
 	for(var i=0; i < 5; i++){
@@ -120,17 +163,46 @@ function displayBoard(){
 				document.getElementById(wrap_id).style.background = "red";
 			} else if(game_board[i][j] == -1){
 				// set to gray
+				document.getElementById(img_id).onclick = bombClicked;
 				document.getElementById(wrap_id).style.background = "gray";
 			}
 		}
 	}
 }
 
+function bombClicked(){
+	openModal("You selected the bomb :(", "white");
+	return 0;
+}
 
+function openModal(text, color){
+	var modal = document.getElementById('myModal');
+	modal.style.display = "block";
+	document.getElementById('modal_sub').innerHTML = text;
+	document.getElementById('modal_sub').style.color = color;
+}
 
+function displayPartitionBoard(){
+	setTurn(); //getTurn();
+	displayTurn();
+	generatePartitionGrid(); // getPartitionGrid();
+	for(var i=0; i < 5; i++){
+		for(var j=0; j < 5; j++){
+			var wrap_id = "im_w" + i + j;
 
-
-
+			if(game_board[i][j] == 2){
+				// set to blue
+				document.getElementById(wrap_id).style.background = "blue";
+			} else if(game_board[i][j] == 1){
+				//set to red
+				document.getElementById(wrap_id).style.background = "red";
+			} else if(game_board[i][j] == -1){
+				// set to gray
+				document.getElementById(wrap_id).style.background = "gray";
+			}
+		}
+	}
+}
 
 
 

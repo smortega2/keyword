@@ -6,106 +6,13 @@
 
   <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
-
+   <link href="image_board.css" rel="stylesheet">
   <style type="text/css">    
-  body
-  {
-    background-color:#000;
-    font-family: 'Actor';
-    font-size:22px;
-  }
-  h1
-  {
-    font-size:15px;
-    margin-top:0;
-    font-family:Arial, sans-serif;
-    text-shadow:2px 0 15px #292929;
-    letter-spacing:4px;
-    text-decoration:none;
-    color:#DDD;
-  }
-  #banner
-  {
-    width:500px;
-    height:200px;
-    text-align:center;
-    background-image:url(http://i.imgur.com/MQHYB.jpg);
-    background-repeat:no-repeat;
-    border-radius:5px;
-    margin:90px auto auto;
-    padding:80px 0;
-  }
-  .lead
-  {
-    background-color:rgba(255,255,255,0.6);
-    border-radius:3px;
-    box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
-    font-family:Sintony, sans-serif;
-  }
-  .div_wrapper
-  {
-    width:100%;
-    text-align: center;
-  }
-
-  .ol_wrap
-  {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  ol {
-    background: #6b4a82;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top:10px;
-  }
-
-  ol li {
-    padding: 5px;
-    margin-left: 35px;
-  }
-
-  #timer
-  {
-    font-family: 'Actor', monospace;
-    margin-top:-30px;
-    font-size:50px;
-  }
-
-  .row{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  img{
-    width:130px;
-    height:130px;
-/*    opacity: 0.3;
-*/
-  }
-  .img_wrapper { 
-    width: 130px;
-    height: 130px;
-    display: inline-block;
-    background: #c6b52d;
-    /*background-color: red; 
-    display: inline-block;*/
-/*    visibility: hidden; 
-*/  }
-
-
-
-  .hoverable_img:hover {
-    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
+  
 
   </style>
 </head>  
- <body onload="displayBoard()"> 
+ <body onload="displayImageBoard()"> 
   <div class="container-fluid p-0" align="center">
     <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
       <div class="my-auto">
@@ -113,101 +20,112 @@
       </div>
     </section>
   </div>
+  <p class="vert_text"><span id="team">Blue</span> goes first!</p>
   <div class="row"> 
     <div class="column">
       <div class="img_wrapper" id="im_w00">
         <img class="hoverable_img" src="imgs/im0.jpg" id="im00" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w01">
-        <img class="hoverable_img" src="imgs/im1.jpg" id="im01" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im01" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w02">
-        <img class="hoverable_img" src="imgs/im2.jpg" id="im02" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im02" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w03">
-        <img class="hoverable_img" src="imgs/im3.jpg" id="im03" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im03" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w04">
-        <img class="hoverable_img" src="imgs/im4.jpg" id="im04" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im04" onclick="updateImageColor(this.id)">
       </div>
     </div>
   </div>
   <div class="row"> 
     <div class="column">
       <div class="img_wrapper" id="im_w10">
-        <img class="hoverable_img" src="imgs/im5.jpg" id="im10" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im10" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w11">
-        <img class="hoverable_img" src="imgs/im6.jpg" id="im11" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im11" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w12">
-        <img class="hoverable_img" src="imgs/im7.jpg" id="im12" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im12" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w13">
-        <img class="hoverable_img" src="imgs/im8.jpg" id="im13" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im13" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w14">
-        <img class="hoverable_img" src="imgs/im9.jpg" id="im14" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im14" onclick="updateImageColor(this.id)">
       </div>
     </div>
   </div>
   <div class="row"> 
     <div class="column">
       <div class="img_wrapper" id="im_w20">
-        <img class="hoverable_img" src="imgs/im10.jpg" id="im20" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im20" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w21">
-        <img class="hoverable_img" src="imgs/im11.jpg" id="im21" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im21" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w22">
-        <img class="hoverable_img" src="imgs/im12.jpg" id="im22" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im22" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w23">
-        <img class="hoverable_img" src="imgs/im13.jpg" id="im23" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im23" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w24">
-        <img class="hoverable_img" src="imgs/im14.jpg" id="im24" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im24" onclick="updateImageColor(this.id)">
       </div>
     </div>
   </div>
   <div class="row"> 
     <div class="column">
       <div class="img_wrapper" id="im_w30">
-        <img class="hoverable_img" src="imgs/im15.jpg" id="im30" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im30" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w31">
-        <img class="hoverable_img" src="imgs/im16.jpg" id="im31" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im31" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w32">
-        <img class="hoverable_img" src="imgs/im17.jpg" id="im32" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im32" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w33">
-        <img class="hoverable_img" src="imgs/im18.jpg" id="im33" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im33" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w34">
-        <img class="hoverable_img" src="imgs/im19.jpg" id="im34" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im34" onclick="updateImageColor(this.id)">
       </div>
     </div>
   </div>
   <div class="row"> 
     <div class="column">
       <div class="img_wrapper" id="im_w40">
-        <img class="hoverable_img" src="imgs/im20.jpg" id="im40" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im40" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w41">
-        <img class="hoverable_img" src="imgs/im21.jpg" id="im41" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im41" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w42">
-        <img class="hoverable_img" src="imgs/im22.jpg" id="im42" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im42" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w43">
-        <img class="hoverable_img" src="imgs/im23.jpg" id="im43" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im43" onclick="updateImageColor(this.id)">
       </div>
       <div class="img_wrapper" id="im_w44">
-        <img class="hoverable_img" src="imgs/im24.jpg" id="im44" onclick="updateImageColor(this.id)">
+        <img class="hoverable_img" src="imgs/im0.jpg" id="im44" onclick="updateImageColor(this.id)">
       </div>
     </div>
   </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div>
+      <p class="modal_title">GAME OVER</p> 
+      <p id="modal_sub">You selected the bomb</p> 
+    </div>
+    </div>
+  </div>
+  
   <script src="chance.js"></script>
   <script src="gameplay_logic.js"></script>
   <script src="game_board.js"></script>
