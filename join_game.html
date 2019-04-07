@@ -22,24 +22,7 @@
     text-decoration:none;
     color:#DDD;
   }
-  #banner
-  {
-    width:500px;
-    height:200px;
-    text-align:center;
-    background-image:url(http://i.imgur.com/MQHYB.jpg);
-    background-repeat:no-repeat;
-    border-radius:5px;
-    margin:90px auto auto;
-    padding:80px 0;
-  }
-  .lead
-  {
-    background-color:rgba(255,255,255,0.6);
-    border-radius:3px;
-    box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
-    font-family:Sintony, sans-serif;
-  }
+
   .start_game_button
   {
     width: 900px;
@@ -55,6 +38,7 @@
     border-radius: 8px;
     font-family: 'Actor';
   }
+
   .start_game_button:hover
   {
     background-color: #3276ba;
@@ -106,7 +90,7 @@
   </div>
   <div style="height:130px"></div>
   <div class="div_wrapper" id="gamekey" style="color:white">
-    <span >game key: <span id="key_text"></span></span>
+    <span >enter game key: <span id="key_text"></span></span>
   </div>
   <div class="div_wrapper" id="joinas" style="color:white">
     <span >join game as</span>
@@ -116,6 +100,9 @@
   </div>
   <div class="button_wrap">
       <button onclick="goToPartitionBoard()" class = "start_game_button" >clue-giver</button>
+  </div>
+  <div class="div_wrapper" id="joinas" style="color:white">
+    <span id = "warning" style="margin-top:100px">warning text</span>
   </div>
   <script src="page_routing.js"></script>
   <script src="gameplay_logic.js"></script>

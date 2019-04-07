@@ -12,16 +12,30 @@ function setupGame(){
 	// 	or
 	// 	a guesser
 	// 		see the image grid
-	setInProgress();
 	setTurn();
-	generateImageGrid();
-	generatePartitionGrid();
-	window.location = "player.html";
+	var seed = getSeed();
+	//generateImageGrid();
+	//generatePartitionGrid();
+	window.location = "player.html?turn=" + turn + "&seed=" + seed;
 }
 
-function setInProgress(){
-	return 0;
+function joinGame(){
+	window.location = "join_game.html"
 }
+
+function getSeed(){
+	if(turn == 1){
+		var i = chance.unique(chance.natural, 1, {min: 0, max: red_keys.length-1});
+		var seed = red_keys[i];
+		return seed;
+	} else {
+		var i = chance.unique(chance.natural, 1, {min: 0, max: blue_keys.length-1});
+		var seed = blue_keys[i];
+		return seed;
+	}
+	
+}
+
 
 function setTurn(){
 	var r = chance.unique(chance.natural, 1, {min: 1, max: 100});
@@ -52,18 +66,21 @@ function generatePartitionGrid(){
 		num_t1_tiles = 8;
 		num_t2_tiles = 9;
 	}
+
+	var seed = getUrlVars()["seed"];
+	var chance_seeded = new Chance(seed);
 	//generate random 8 inds in that range, update grid with 1's
-	var t1_inds = chance.unique(chance.natural, num_t1_tiles, {min: 0, max: inds.length-1});
+	var t1_inds = chance_seeded.unique(chance_seeded.natural, num_t1_tiles, {min: 0, max: inds.length-1});
 	grid = updateGridForTeam(grid, t1_inds, inds,1);
 	inds = spliceIndsArray(t1_inds,inds);
 
 	//generate random 9 inds in that range, update grid with 2's
-	var t2_inds = chance.unique(chance.natural, num_t2_tiles, {min: 0, max: inds.length-1});
+	var t2_inds = chance_seeded.unique(chance_seeded.natural, num_t2_tiles, {min: 0, max: inds.length-1});
 	grid = updateGridForTeam(grid, t2_inds, inds, 2);
 	inds = spliceIndsArray(t2_inds,inds);
 	
 	//generate random 1 ind  in that range, update grid with -1
-	var b_inds = chance.unique(chance.natural, 1, {min: 0, max: inds.length-1});
+	var b_inds = chance_seeded.unique(chance_seeded.natural, 1, {min: 0, max: inds.length-1});
 	grid = updateGridForTeam(grid, b_inds, inds, -1);
 	inds = spliceIndsArray(b_inds,inds);
 	
@@ -126,7 +143,7 @@ function gameOverCheck(){
 }
 
 function getTurn(){
-	return 0;
+	turn = getUrlVars()["turn"];
 }
 
 function getGameBoard(){
@@ -145,7 +162,8 @@ function displayTurn(){
 }
 
 function displayImageBoard(){
-	setTurn(); //getTurn();
+	displayKeyword();
+	getTurn();
 	displayTurn();
 	generateImageGrid(); // getGameBoard();
 	generatePartitionGrid();
@@ -183,7 +201,8 @@ function openModal(text, color){
 }
 
 function displayPartitionBoard(){
-	setTurn(); //getTurn();
+	displayKeyword();
+	getTurn();
 	displayTurn();
 	generatePartitionGrid(); // getPartitionGrid();
 	for(var i=0; i < 5; i++){
@@ -204,6 +223,10 @@ function displayPartitionBoard(){
 	}
 }
 
+function displayKeyword(){
+	var keyword = getUrlVars()["seed"];
+	document.getElementById("key_text").innerHTML = keyword;
+}
 
 
 

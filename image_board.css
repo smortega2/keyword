@@ -101,6 +101,21 @@ body
     left: 220px;
   }
 
+  .key_wrap {
+    /*writing-mode: vertical-rl;
+    text-orientation: upright;*/
+    color:white;
+
+    position: absolute;
+    top: -18px;
+    left: 20px;
+  }
+  
+  #key_text{
+    color:#429bf4;
+    text-decoration: underline;
+  }
+
 
   .hoverable_img:hover {
     transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
