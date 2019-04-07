@@ -56,23 +56,19 @@ body
   }
 
   .key_wrap {
-    /*writing-mode: vertical-rl;
-    text-orientation: upright;*/
     color:white;
 
     position: absolute;
     top: -18px;
-    left: 20px;
+    left: 15px;
   }
   
   .t_wrap {
-    /*writing-mode: vertical-rl;
-    text-orientation: upright;*/
     color:white;
 
     position: absolute;
     top: 10px;
-    left: 20px;
+    left: 15px;
   }
 
   #key_text{
