@@ -65,6 +65,16 @@ body
     left: 20px;
   }
   
+  .t_wrap {
+    /*writing-mode: vertical-rl;
+    text-orientation: upright;*/
+    color:white;
+
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+
   #key_text{
     color:#429bf4;
     text-decoration: underline;
@@ -115,7 +125,9 @@ body
 }
 
 
+.board_wrap{
 
+}
 
 
 
