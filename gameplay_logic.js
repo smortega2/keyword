@@ -1,56 +1,41 @@
-var num_imgs = 31;
 var turn = 0;
 var num_red_selected = 0;
 var num_blue_selected = 0;
 function setupGame(){
-	//  game set to inprogress in db 
-	// 	image grid is generated
-	// 	partition grid is generated
-	// 	choose to be a cluegiver
-	// 		choose a team (red or blue)
-	// 		see the partition grid
-	// 	or
-	// 	a guesser
-	// 		see the image grid
-	setTurn();
-	var seed = getSeed();
-	//generateImageGrid();
-	//generatePartitionGrid();
-	window.location = "player.html?turn=" + turn + "&seed=" + seed;
+	var turn = setTurn();
+	var keyword = getKeyword();
+	window.location = "player.html?turn=" + turn + "&keyword=" + keyword;
 }
 
 function joinGame(){
 	window.location = "join_game.html"
 }
 
-function getSeed(){
+function getKeyword(){
+	var keyword = "";
 	if(turn == 1){
 		var i = chance.unique(chance.natural, 1, {min: 0, max: red_keys.length-1});
-		var seed = red_keys[i];
-		return seed;
+		keyword = red_keys[i];
 	} else {
 		var i = chance.unique(chance.natural, 1, {min: 0, max: blue_keys.length-1});
-		var seed = blue_keys[i];
-		return seed;
+		keyword = blue_keys[i];
 	}
-	
+	return keyword;
 }
 
 
 function setTurn(){
 	var r = chance.unique(chance.natural, 1, {min: 1, max: 100});
-	if(r <= 50) turn = 1;
-	else turn = 2;
+	if(r <= 50) return 1;
+	else return 2;
 }
 
 function generateImageGrid(){
 	// grab 25 random indices
-	var inds = chance.unique(chance.natural, 25, {min: 0, max: num_imgs-1});
-	img_board = [];
+	var inds = chance.unique(chance.natural, 25, {min: 0, max: image_urls.length-1});
+	var img_board = [];
 	while(inds.length) img_board.push(inds.splice(0,5));
-
-	//put them in db
-	return 0;
+	return img_board;
 }
 
 function generatePartitionGrid(){
@@ -67,7 +52,7 @@ function generatePartitionGrid(){
 		num_t2_tiles = 9;
 	}
 
-	var seed = getUrlVars()["seed"];
+	var seed = getUrlVars()["keyword"];
 	var chance_seeded = new Chance(seed);
 	//generate random 8 inds in that range, update grid with 1's
 	var t1_inds = chance_seeded.unique(chance_seeded.natural, num_t1_tiles, {min: 0, max: inds.length-1});
@@ -84,9 +69,8 @@ function generatePartitionGrid(){
 	grid = updateGridForTeam(grid, b_inds, inds, -1);
 	inds = spliceIndsArray(b_inds,inds);
 	
-	game_board = grid;
 	console.log(grid);
-	return 0;
+	return grid;
 }
 
 function updateGridForTeam(grid, t_inds, inds, num){
@@ -115,12 +99,6 @@ function updateImageColor(id){
 	wrap_id = id.slice(0, 2) + "_w" + id.slice(2);
 	var color = document.getElementById(wrap_id).style.background;
 
-	// for(var i=0; i < 5; i++){
-	// 	for(var j=0; j < 5; j++){
-	// 		console.log("id: " + i + j);
-	// 		console.log(document.getElementById(id).style.zIndex);
-	// 	}
-	// }
 	if(color == "red"){
 		num_red_selected++;
 	}if(color == "blue"){
@@ -146,9 +124,6 @@ function getTurn(){
 	turn = getUrlVars()["turn"];
 }
 
-function getGameBoard(){
-	return 0;
-}
 
 function displayTurn(){
 	if(turn == 1){
@@ -165,22 +140,19 @@ function displayImageBoard(){
 	displayKeyword();
 	getTurn();
 	displayTurn();
-	generateImageGrid(); // getGameBoard();
-	generatePartitionGrid();
+	var img_board = generateImageGrid(); // getGameBoard();
+	var game_board = generatePartitionGrid();
 	for(var i=0; i < 5; i++){
 		for(var j=0; j < 5; j++){
 			var wrap_id = "im_w" + i + j;
 			var img_id = "im" + i + j;
 			var img_url_ind = img_board[i][j];
 			document.getElementById(img_id).src=image_urls[img_url_ind];
-			if(game_board[i][j] == 2){
-				// set to blue
+			if(game_board[i][j] == 2){ // set to blue
 				document.getElementById(wrap_id).style.background = "blue";
-			} else if(game_board[i][j] == 1){
-				//set to red
+			} else if(game_board[i][j] == 1){ //set to red
 				document.getElementById(wrap_id).style.background = "red";
-			} else if(game_board[i][j] == -1){
-				// set to gray
+			} else if(game_board[i][j] == -1){ // set to gray
 				document.getElementById(img_id).onclick = bombClicked;
 				document.getElementById(wrap_id).style.background = "gray";
 			}
@@ -190,7 +162,6 @@ function displayImageBoard(){
 
 function bombClicked(){
 	openModal("You selected the bomb :(", "white");
-	return 0;
 }
 
 function openModal(text, color){
@@ -204,19 +175,17 @@ function displayPartitionBoard(){
 	displayKeyword();
 	getTurn();
 	displayTurn();
-	generatePartitionGrid(); // getPartitionGrid();
+	var game_board = generatePartitionGrid(); // getPartitionGrid();
+
 	for(var i=0; i < 5; i++){
 		for(var j=0; j < 5; j++){
 			var wrap_id = "im_w" + i + j;
 
-			if(game_board[i][j] == 2){
-				// set to blue
+			if(game_board[i][j] == 2){ // blue tile
 				document.getElementById(wrap_id).style.background = "blue";
-			} else if(game_board[i][j] == 1){
-				//set to red
+			} else if(game_board[i][j] == 1){ //set to red
 				document.getElementById(wrap_id).style.background = "red";
-			} else if(game_board[i][j] == -1){
-				// set to gray
+			} else if(game_board[i][j] == -1){ // set to gray
 				document.getElementById(wrap_id).style.background = "gray";
 			}
 		}
@@ -224,7 +193,7 @@ function displayPartitionBoard(){
 }
 
 function displayKeyword(){
-	var keyword = getUrlVars()["seed"];
+	var keyword = getUrlVars()["keyword"];
 	document.getElementById("key_text").innerHTML = keyword;
 }
 

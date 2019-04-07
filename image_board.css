@@ -14,55 +14,11 @@ body
     text-decoration:none;
     color:#DDD;
   }
-  #banner
-  {
-    width:500px;
-    height:200px;
-    text-align:center;
-    background-image:url(http://i.imgur.com/MQHYB.jpg);
-    background-repeat:no-repeat;
-    border-radius:5px;
-    margin:90px auto auto;
-    padding:80px 0;
-  }
-  .lead
-  {
-    background-color:rgba(255,255,255,0.6);
-    border-radius:3px;
-    box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
-    font-family:Sintony, sans-serif;
-  }
+
   .div_wrapper
   {
     width:100%;
     text-align: center;
-  }
-
-  .ol_wrap
-  {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  ol {
-    background: #6b4a82;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top:10px;
-  }
-
-  ol li {
-    padding: 5px;
-    margin-left: 35px;
-  }
-
-  #timer
-  {
-    font-family: 'Actor', monospace;
-    margin-top:-30px;
-    font-size:50px;
   }
 
   .row{
@@ -78,10 +34,8 @@ body
     border-style: solid;
     border-width: 1px;
     border-color: white;
-    /*position: relative;
+    /*position: sticky;
     z-index: 0;*/
-/*    opacity: 0.3;
-*/
   }
   .img_wrapper { 
     width: 130px;
