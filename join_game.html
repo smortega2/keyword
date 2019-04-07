@@ -73,8 +73,20 @@
   }
 
   #key_text{
+    font-family: 'Actor', monospace;
+    font-size:50px;
     color:#429bf4;
-    text-decoration: underline;
+    background-color:#000;
+    border: none;
+    border-bottom: 2px solid #429bf4;
+    width:170px;
+  }
+
+  #warning{
+    margin-top: 10px;
+    color: red;
+    font-size:25px;
+
   }
 
 	</style>
@@ -90,22 +102,24 @@
   </div>
   <div style="height:130px"></div>
   <div class="div_wrapper" id="gamekey" style="color:white">
-    <span >enter game key: <span id="key_text"></span></span>
+    <span >enter game key: <input type="text" id="key_text" maxlength="4"></span>
   </div>
   <div class="div_wrapper" id="joinas" style="color:white">
     <span >join game as</span>
   </div>
   <div class="button_wrap">
-      <button onclick="goToImageBoard()" class = "start_game_button" >guesser</button>
+      <button onclick="join_goToImageBoard()" class = "start_game_button" >guesser</button>
   </div>
   <div class="button_wrap">
-      <button onclick="goToPartitionBoard()" class = "start_game_button" >clue-giver</button>
+      <button onclick="join_goToPartitionBoard()" class = "start_game_button" >clue-giver</button>
   </div>
   <div class="div_wrapper" id="joinas" style="color:white">
-    <span id = "warning" style="margin-top:100px">warning text</span>
+    <span id = "warning" style="margin-top:100px"></span>
   </div>
   <script src="page_routing.js"></script>
   <script src="gameplay_logic.js"></script>
+  <script src="red_keys.js"></script>
+  <script src="blue_keys.js"></script>
 
 </body>
 </html>
