@@ -21,8 +21,12 @@ function joinRouter(page){
 		document.getElementById("warning").innerHTML = "game keys must be 4 characters"; // if incomplete key, prompt user that the key is invalid
 	} else{
 		if(red_keys.includes(key_input)){ // check if that key is in the red list
+			console.log('red');
+			console.log(red_keys.indexOf(key_input));
 			window.location = page + "?turn=1" + "&keyword=" + key_input;
 		} else if(blue_keys.includes(key_input)){ // check if that key is in the blue list
+			console.log('blue');
+			console.log(blue_keys.indexOf(key_input));
 			window.location = page + "?turn=2" + "&keyword=" + key_input;
 		} else { // if the key isn't in either list, tell user that key is incorrect
 			document.getElementById("warning").innerHTML = "that is an invalid game key";

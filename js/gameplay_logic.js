@@ -1,9 +1,9 @@
-var turn = 0;
+// var turn = 0;
 var num_red_selected = 0;
 var num_blue_selected = 0;
 function setupGame(){
 	var turn = setTurn();
-	var keyword = getKeyword();
+	var keyword = getKeyword(turn);
 	window.location = "player.html?turn=" + turn + "&keyword=" + keyword;
 }
 
@@ -11,7 +11,7 @@ function joinGame(){
 	window.location = "join_game.html"
 }
 
-function getKeyword(){
+function getKeyword(turn){
 	var keyword = "";
 	if(turn == 1){
 		var i = chance.unique(chance.natural, 1, {min: 0, max: red_keys.length-1});
@@ -38,7 +38,7 @@ function generateImageGrid(){
 	return img_board;
 }
 
-function generatePartitionGrid(){
+function generatePartitionGrid(turn){
 	var grid = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 	var inds = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
 
@@ -104,11 +104,11 @@ function updateImageColor(id){
 	}if(color == "blue"){
 		num_blue_selected++;
 	}
-
-	gameOverCheck();
+	var turn = getTurn();
+	gameOverCheck(turn);
 }
 
-function gameOverCheck(){
+function gameOverCheck(turn){
 	if(turn == 2 && num_blue_selected == 9){
 		openModal("Blue Wins!", "blue");
 	} else if(turn == 1 && num_blue_selected == 8){
@@ -121,11 +121,11 @@ function gameOverCheck(){
 }
 
 function getTurn(){
-	turn = getUrlVars()["turn"];
+	return getUrlVars()["turn"];
 }
 
 
-function displayTurn(){
+function displayTurn(turn){
 	if(turn == 1){
 		document.getElementById("team").innerHTML = "Red";
 		document.getElementById("team").style.color = "red";
@@ -138,10 +138,10 @@ function displayTurn(){
 
 function displayImageBoard(){
 	displayKeyword();
-	getTurn();
-	displayTurn();
+	var turn = getTurn();
+	displayTurn(turn);
 	var img_board = generateImageGrid(); // getGameBoard();
-	var game_board = generatePartitionGrid();
+	var game_board = generatePartitionGrid(turn);
 	for(var i=0; i < 5; i++){
 		for(var j=0; j < 5; j++){
 			var wrap_id = "im_w" + i + j;
@@ -173,9 +173,9 @@ function openModal(text, color){
 
 function displayPartitionBoard(){
 	displayKeyword();
-	getTurn();
-	displayTurn();
-	var game_board = generatePartitionGrid(); // getPartitionGrid();
+	var turn = getTurn();
+	displayTurn(turn);
+	var game_board = generatePartitionGrid(turn); // getPartitionGrid();
 
 	for(var i=0; i < 5; i++){
 		for(var j=0; j < 5; j++){
