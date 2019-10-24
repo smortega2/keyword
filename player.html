@@ -1,108 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>keyword</title>	
+  <head>
+	 <meta charset="utf-8">
+	 <title>keyword</title>	
 
-	<link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
-
-	<style type="text/css">    
-  body
-  {
-    background-color:#000;
-  }
-  h1
-  {
-    font-size:48px;
-    margin-top:0;
-    font-family:Arial, sans-serif;
-    text-shadow:2px 0 15px #292929;
-    letter-spacing:4px;
-    text-decoration:none;
-    color:#DDD;
-  }
-  .start_game_button
-  {
-    width: 900px;
-/*    margin-top:150px;
-*/    margin-bottom:20px;
-    vertical-align: center;
-    background-color: #429bf4;
-    border:none;
-    padding: 15px;
-    color: #DDD;
-    font-size: 25px;
-    box-shadow:2px 0 15px #292929;
-    border-radius: 8px;
-    font-family: 'Actor';
-  }
-  .start_game_button:hover
-  {
-    background-color: #3276ba;
-  }
-
-  .button_wrap
-  {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .div_wrapper
-  {
-    width:100%;
-    text-align: center;
-  }
-  #joinas
-  {
-    font-family: 'Actor', monospace;
-    margin-top:-30px;
-    margin-bottom: 20px;
-    font-size:50px;
-  }
-  #gamekey
-  {
-    font-family: 'Actor', monospace;
-    margin-top:-30px;
-    margin-bottom: 40px;
-    font-size:50px;
-    
-  }
-
-  #key_text{
-    color:#429bf4;
-    text-decoration: underline;
-  }
-
-	</style>
-
-</head>  
+   <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+   <link href='styles/sharedStyles.css' rel='stylesheet'>
+   <link href='styles/player.css' rel='stylesheet'>
+  </head>  
   <body onload="displayKeyword()">
-    <div class="container-fluid p-0" align="center">
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-      <div class="my-auto">
-        <h1 class="mb-0">keyword</h1>
-      </div>
-    </section>
-  </div>
-  <div style="height:130px"></div>
-  <div class="div_wrapper" id="gamekey" style="color:white">
-    <span >game key: <span id="key_text"></span></span>
-  </div>
-  <div class="div_wrapper" id="joinas" style="color:white">
-    <span >join game as</span>
-  </div>
-  <div class="button_wrap">
+    <div class="header-wrap" align="center">
+      <h1>keyword</h1>
+    </div>
+    <div style="height:130px"></div>
+    <div class="div_wrapper" id="gamekey" style="color:white">
+      <span >game key: <span id="key_text"></span></span>
+    </div>
+    <div class="div_wrapper" id="joinas" style="color:white">
+      <span >join game as</span>
+    </div>
+    <div class="button_wrap">
       <button onclick="playerRouter('image_board.html')" class = "start_game_button" >guesser</button>
-  </div>
-  <div class="button_wrap">
+    </div>
+    <div class="button_wrap">
       <button onclick="playerRouter('partition_board.html')" class = "start_game_button" >clue-giver</button>
-  </div>
+    </div>
+  </body>
   <script src="js/page_routing.js"></script>
   <script src="js/gameplay_logic.js"></script>
-
-</body>
 </html>
 
 

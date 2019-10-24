@@ -1,0 +1,68 @@
+/* keyword header styles */
+.header-wrap{
+  padding-top:100px;
+}
+h1
+{
+  font-size:52px;
+  margin-top:0;
+  font-family:Arial, sans-serif;
+  text-shadow:2px 0 15px #292929;
+  letter-spacing:4px;
+  text-decoration:none;
+  color:#DDD;
+}
+
+/* background styles */
+body
+{
+  background-color:#000;
+}
+
+/* game button stles */
+.start_game_button
+{
+  width: 900px;
+  margin-bottom:20px;
+  vertical-align: center;
+  background-color: #429bf4;
+  border:none;
+  padding: 15px;
+  color: #DDD;
+  font-size: 25px;
+  box-shadow:2px 0 15px #292929;
+  border-radius: 8px;
+  font-family: 'Actor';
+}
+.start_game_button:hover
+{
+  background-color: #3276ba;
+}
+.button_wrap
+{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div_wrapper
+{
+  width:100%;
+  text-align: center;
+}
+
+#joinas
+{
+  font-family: 'Actor', monospace;
+  margin-top:-30px;
+  margin-bottom: 20px;
+  font-size:40px;
+}
+
+#gamekey
+{
+  font-family: 'Actor', monospace;
+  margin-top:-30px;
+  margin-bottom: 40px;
+  font-size:50px;  
+}

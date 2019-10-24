@@ -1,25 +1,23 @@
-body
-  {
-    background-color:#000;
-    font-family: 'Actor';
-    font-size:22px;
-  }
-  h1
-  {
-    font-size:15px;
-    margin-top:0;
-    font-family:Arial, sans-serif;
-    text-shadow:2px 0 15px #292929;
-    letter-spacing:4px;
-    text-decoration:none;
-    color:#DDD;
-  }
+body {
+  background-color:#000;
+  font-family: 'Actor';
+  font-size:22px;
+}
 
-  .div_wrapper
-  {
-    width:100%;
-    text-align: center;
-  }
+h1 {
+  font-size:15px;
+  margin-top:0;
+  font-family:Arial, sans-serif;
+  text-shadow:2px 0 15px #292929;
+  letter-spacing:4px;
+  text-decoration:none;
+  color:#DDD;
+}
+
+.div_wrapper {
+  width:100%;
+  text-align: center;
+}
 
   .row{
     width: 100%;

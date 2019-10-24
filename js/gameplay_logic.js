@@ -32,7 +32,9 @@ function setTurn(){
 
 function generateImageGrid(){
 	// grab 25 random indices
-	var inds = chance.unique(chance.natural, 25, {min: 0, max: image_urls.length-1});
+	var seed = getUrlVars()["keyword"];
+	var chance_seeded = new Chance(seed);
+	var inds = chance_seeded.unique(chance_seeded.natural, 25, {min: 0, max: image_urls.length-1});
 	var img_board = [];
 	while(inds.length) img_board.push(inds.splice(0,5));
 	return img_board;
@@ -69,7 +71,7 @@ function generatePartitionGrid(turn){
 	grid = updateGridForTeam(grid, b_inds, inds, -1);
 	inds = spliceIndsArray(b_inds,inds);
 	
-	console.log(grid);
+	console.log("grid", grid);
 	return grid;
 }
 

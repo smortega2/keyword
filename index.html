@@ -1,97 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>keyword</title>	
+  <head>
+	 <meta charset="utf-8">
+	 <title>keyword</title>	
 
-	<link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
-
-	<style type="text/css">    
-  body
-  {
-    background-color:#000;
-  }
-  h1
-  {
-    font-size:48px;
-    margin-top:0;
-    font-family:Arial, sans-serif;
-    text-shadow:2px 0 15px #292929;
-    letter-spacing:4px;
-    text-decoration:none;
-    color:#DDD;
-  }
-  #banner
-  {
-    width:500px;
-    height:200px;
-    text-align:center;
-    background-image:url(http://i.imgur.com/MQHYB.jpg);
-    background-repeat:no-repeat;
-    border-radius:5px;
-    margin:90px auto auto;
-    padding:80px 0;
-  }
-  .lead
-  {
-    background-color:rgba(255,255,255,0.6);
-    border-radius:3px;
-    box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
-    font-family:Sintony, sans-serif;
-  }
-  .start_game_button
-  {
-    width: 900px;
-/*    margin-top:150px;
-*/    margin-bottom:20px;
-    vertical-align: center;
-    background-color: #429bf4;
-    border:none;
-    padding: 15px;
-    color: #DDD;
-    font-size: 25px;
-    box-shadow:2px 0 15px #292929;
-    border-radius: 8px;
-    font-family: 'Actor';
-  }
-  .start_game_button:hover
-  {
-    background-color: #3276ba;
-  }
-
-  .button_wrap
-  {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-	</style>
-
-</head>  
+	 <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link href='styles/sharedStyles.css' rel='stylesheet'>
+    <link href='styles/index.css' rel='stylesheet'>
+  </head>  
   <body>
-    <div class="container-fluid p-0" align="center">
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-      <div class="my-auto">
-        <h1 class="mb-0">keyword</h1>
-      </div>
-    </section>
-  </div>
-  <div style="height:200px"></div>
-  <div class="button_wrap">
+    <div class="header-wrap" align="center">
+      <h1>keyword</h1>
+    </div>
+    <div style="height:200px"></div>
+    <div class="button_wrap">
       <button onclick="setupGame()" class = "start_game_button" >start game</button>
-  </div>
-  <div class="button_wrap">
+    </div>
+    <div class="button_wrap">
       <button onclick="joinGame()" class = "start_game_button" >join game</button>
-  </div>
+    </div>
+  </body>
   <script src="js/gameplay_logic.js"></script>
   <script src="js/chance.js"></script>
   <script src="js/red_keys.js"></script>
   <script src="js/blue_keys.js"></script>
-
-</body>
 </html>
 
 

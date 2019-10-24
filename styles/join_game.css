@@ -1,0 +1,15 @@
+#key_text{
+  font-family: 'Actor', monospace;
+  font-size:50px;
+  color:#429bf4;
+  background-color:#000;
+  border: none;
+  border-bottom: 2px solid #429bf4;
+  width:170px;
+}
+
+#warning{
+  margin-top: 10px;
+  color: red;
+  font-size:25px;
+}
