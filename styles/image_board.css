@@ -96,20 +96,26 @@ h1 {
 
 /* Modal Content */
 .modal-content {
-  background-color: #737777;
+  background-color: #b06fa4;
   margin: auto;
   padding: 20px;
-  width: 80%;
+  width: 60%;
   border-radius: 6px;
-  height:50%;
+  height:60%;
+  text-align: center;
+  /*
   display: flex;
-  align-items: center;
+  
   justify-content: center;
-  color: #0ccad1;
+  */
+  align-items: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .modal_title {
   font-size: 39px;
+  margin-top:20%;
 }
 
 .centered{
@@ -117,7 +123,24 @@ h1 {
     align-items: center;
     justify-content: center;
 }
+.play_again{
+  margin-top:80px;
+  font-size: 16px;
+}
 
+.play_again_btn{
+  background-color: #429bf4;
+  color: #DDD;
+  border-radius: 4px;
+  border:none;
+  font-size: 17px;
+  font-family: 'Actor';
+}
+
+.play_again_btn:hover
+{
+  background-color: #3276ba;
+}
 
 .board_wrap{
 
