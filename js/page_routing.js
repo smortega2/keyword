@@ -15,6 +15,7 @@ function playerRouter(page){
 
 function joinRouter(page){
 	var key_input = document.getElementById("key_text").value;
+	console.log("key_input", key_input);
 	if(key_input == ""){ // check if user has entered a key
 		document.getElementById("warning").innerHTML = "please enter a game key"; //prompt user to enter key in warning text
 	} else if(key_input.length < 4){

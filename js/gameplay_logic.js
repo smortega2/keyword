@@ -52,6 +52,7 @@ function generateImageGrid(){
 	var inds = chance_seeded.unique(chance_seeded.natural, 25, {min: 0, max: image_urls.length-1});
 	var img_board = [];
 	while(inds.length) img_board.push(inds.splice(0,5));
+	console.log("img_board", img_board)
 	return img_board;
 }
 
@@ -122,11 +123,13 @@ function updateImageColor(id){
 	$("#" + id).removeClass('hoverable_img');
 
 	wrap_id = id.slice(0, 2) + "_w" + id.slice(2);
-	var color = document.getElementById(wrap_id).style.background;
+	var color = document.getElementById(wrap_id).getAttribute("card_color");
 
 	if(color == "red"){
+		document.getElementById(wrap_id).style.background = "red";
 		num_red_selected++;
 	}if(color == "blue"){
+		document.getElementById(wrap_id).style.background = "blue";
 		num_blue_selected++;
 	}
 	var turn = getTurn();
@@ -183,9 +186,20 @@ function displayImageBoard(){
 			var wrap_id = "im_w" + i + j;
 			var img_id = "im" + i + j;
 			var img_url_ind = img_board[i][j];
+
 			document.getElementById(img_id).src=image_urls[img_url_ind];
 
-			setBackgroundColor(game_board[i][j], wrap_id, img_id);
+			// save color to be displayed later to prevent early showing of colors
+			if(game_board[i][j] == 2){ // blue tile
+				document.getElementById(wrap_id).setAttribute("card_color", "blue");
+			} else if(game_board[i][j] == 1){ //set to red
+				document.getElementById(wrap_id).setAttribute("card_color", "red");
+			} else if(game_board[i][j] == -1){ // set to gray
+				document.getElementById(wrap_id).setAttribute("card_color", "gray");
+				if(img_id != null) document.getElementById(img_id).onclick = bombClicked;
+			}
+
+			
 		}
 	}
 }
