@@ -155,11 +155,9 @@ img{
   background-color: #3276ba;
 }
 
-.board_wrap{
-
+.game-heading:hover {
+  cursor: pointer;
 }
-
-
 
 
 
