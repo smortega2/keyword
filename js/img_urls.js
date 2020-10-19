@@ -232,7 +232,7 @@ image_urls = [
 	"https://drive.google.com/uc?export=view&id=1vNxu1OW4rgj45U4Yco24TOUH4VlRvh-F", //68
 	"https://drive.google.com/uc?export=view&id=1i72IYJNZoaIPjxuTERSU-96kYSt_5WVl", //69
 	"https://drive.google.com/uc?export=view&id=16W9nU9zmzbecxxzZzioqWsuoND2Wphry", //70
-	"https://drive.google.com/uc?export=view&id=16W9nU9zmzbecxxzZzioqWsuoND2Wphry", //71
+	"https://drive.google.com/uc?export=view&id=1H-gyc3Tjy6bA0RoXNGCjVEanf5oreXT1", //71
 	"https://drive.google.com/uc?export=view&id=1Is8NTNBQLysVbytaUcWWpTCzfe2IFFmf", //72
 	"https://drive.google.com/uc?export=view&id=1A-6293h37Wxq_Tu4rdDv8os5cTS6OaIt", //73
 	"https://drive.google.com/uc?export=view&id=1uhamVLWDUFkFmoY-w4mnk3kt_dalBY71", //74
