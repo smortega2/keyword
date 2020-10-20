@@ -35,10 +35,11 @@ function joinRouter(page){
 	}
 }
 
-function partitionRouter(){
+// opens page in new tab
+function newTabRouter(page){
 	var turn = getUrlVars()["turn"]; // get turn from url
 	var keyword = getUrlVars()["keyword"]; // get keyword from url
-	var url = "partition_board.html?turn=" + turn + "&keyword=" + keyword; // build new url""
+	var url = page + "?turn=" + turn + "&keyword=" + keyword; // build new url""
 	window.open(url, "_blank"); 
 }
 
