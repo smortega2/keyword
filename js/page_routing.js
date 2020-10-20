@@ -35,6 +35,13 @@ function joinRouter(page){
 	}
 }
 
+function partitionRouter(){
+	var turn = getUrlVars()["turn"]; // get turn from url
+	var keyword = getUrlVars()["keyword"]; // get keyword from url
+	var url = "partition_board.html?turn=" + turn + "&keyword=" + keyword; // build new url""
+	window.open(url, "_blank"); 
+}
+
 
 
 

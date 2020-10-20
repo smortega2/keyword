@@ -65,7 +65,19 @@ img{
   background-color:#010c1a;
 }
 
-#key_text{
+.clue_giver_info_wrap{
+  position: absolute;
+  top: 100px;
+  left: 15px;
+  padding: 5px 15px;
+  display:block;
+  color:white;
+  border:1px solid white;
+  border-radius: 5px;
+  background-color:#010c1a;
+}
+
+.keyword{
   color:#429bf4;
   text-decoration: underline;
 }
@@ -156,6 +168,15 @@ img{
 }
 
 .game-heading:hover {
+  cursor: pointer;
+}
+
+.key-button{
+  border:none; 
+  background-color:transparent;
+}
+
+.key-button:hover{
   cursor: pointer;
 }
 
