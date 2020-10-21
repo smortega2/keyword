@@ -209,7 +209,7 @@ image_urls = [
 	"https://drive.google.com/uc?export=view&id=1foEMp-jpMxVQVdFy1BZxq2gktP_UbFuL", //45
 	"https://drive.google.com/uc?export=view&id=1ing7e3XUkb37zQ3v1Er9dBzc6_bD2wBb", //46
 	"https://drive.google.com/uc?export=view&id=1DXr4wMiQXCZ7kTsy56rH15K8he1zevbB", //47
-	"https://drive.google.com/uc?export=view&id=1Q6paoD1HuP1koW_1SzbIDK_6sDtvoowN", //48
+	"https://drive.google.com/uc?export=view&id=1-VgTjkOpriTF1niUTJLiaAFVL4SctpCv", //48
 	"https://drive.google.com/uc?export=view&id=1i_TMF4e5B6qu-Sp-wbzkjy3u47WcHj-G", //49
 	"https://drive.google.com/uc?export=view&id=1JWoTv6TNHia2Cfac6UwT9IAPoDc2sgXt", //50
 	"https://drive.google.com/uc?export=view&id=1ieC9xDaGhpK8eHwNwx1hUYH08c_VnIcF", //51
