@@ -49,7 +49,7 @@ function generateImageGrid(){
 	// grab 25 random indices
 	var seed = getUrlVars()["keyword"];
 	var chance_seeded = new Chance(seed);
-	var inds = chance_seeded.unique(chance_seeded.natural, 25, {min: 0, max: image_urls.length-1});
+	var inds = chance_seeded.unique(chance_seeded.natural, 25, {min: 0, max: image_urls_1.length-1});
 	var img_board = [];
 	while(inds.length) img_board.push(inds.splice(0,5));
 	console.log("img_board", img_board)
@@ -187,7 +187,7 @@ function displayImageBoard(){
 			var img_id = "im" + i + j;
 			var img_url_ind = img_board[i][j];
 
-			document.getElementById(img_id).src=image_urls[img_url_ind];
+			document.getElementById(img_id).src=image_urls_1[img_url_ind];
 
 			// save color to be displayed later to prevent early showing of colors
 			if(game_board[i][j] == 2){ // blue tile
